@@ -10,26 +10,18 @@ import {
   Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("movlyvbp");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
+  if (state.succeeded) {
+    return (
+      <p className="text-center text-green-600 text-lg font-semibold">
+        پیام با موفقیت ارسال شد، ممنونم!
+      </p>
+    );
+  }
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -111,34 +103,41 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
-            <h3 className="text-2xl font-semibold mb-6"> ارسال پیام</h3>
+      <div className="bg-card p-8 rounded-lg shadow-xs">
+            <h3 className="text-2xl font-semibold mb-6">ارسال پیام</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  {" "}
-                    نام و نام خانوادگی
+                  نام و نام خانوادگی
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="ماهان محمودی ..."
+                />
+                <ValidationError prefix="Name" field="name" errors={state.errors} />
+              </div>
+
+              <div dir="ltr">
+                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  تلفن شما
+                </label>
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="0915......."
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
                   ایمیل شما
                 </label>
                 <input
@@ -146,36 +145,34 @@ export const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="john@gmail.com"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
                   پیام شما
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="سلام من ماهان محمودی هست..."
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={state.submitting}
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}
               >
-                {isSubmitting ? "در حال ارسال ..." : "ارسال پیام"}
+                {state.submitting ? "در حال ارسال ..." : "ارسال پیام"}
                 <Send size={16} />
               </button>
             </form>
