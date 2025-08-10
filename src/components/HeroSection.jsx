@@ -27,7 +27,7 @@ export const HeroSection = () => {
             برای مشتریان نیز فعال است.{" "}
           </p>
           <div className="opacity-0 animate-fade-in-delay-4"> 
-            <a href="#objects" className="cosmic-button">
+            <a href="#projects" className="cosmic-button">
                 مشاهده کار های من
             </a>
           </div>

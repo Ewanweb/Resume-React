@@ -4,8 +4,10 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  MessageCircle,
   Phone,
   Send,
+  TableCellsMerge,
   Twitch,
   Twitter,
 } from "lucide-react";
@@ -87,11 +89,11 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> ارتباط با من</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
+                <a href="https://wa.me/989157817553" target="_blank">
+                  <MessageCircle />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter />
+                <a href="https://t.me/cukablyt" target="_blank">
+                  <Send />
                 </a>
                 <a href="https://instagram.com/awsm.deve" target="_blank">
                   <Instagram />
