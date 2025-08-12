@@ -92,6 +92,8 @@ export const ContactSection = () => {
                 <a href="https://wa.me/989157817553" target="_blank">
                   <MessageCircle />
                 </a>
+                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="mahan-mahmoudi-4a58a2278" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ir.linkedin.com/in/mahan-mahmoudi-4a58a2278?trk=profile-badge">mahan Mahmoudi</a></div>
+              
                 <a href="https://t.me/cukablyt" target="_blank">
                   <Send />
                 </a>

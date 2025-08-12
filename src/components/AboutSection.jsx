@@ -27,11 +27,12 @@ export const AboutSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#content" className="cosmic-button">
+              <a href="#contact" className="cosmic-button">
                 تماس بگیرید
               </a>
               <a
-                href=""
+                href="/MahanMahmoudi_Fa.pdf"
+                download
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 دانلود رزومه
