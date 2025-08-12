@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @font-face {
-  font-family: 'Yekan';
-  src: url('/fonts/Yekan.ttf') format('truetype');
+  font-family: 'vazir';
+  src: url('./assets/webfonts/Vazirmatn-Medium.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
+
 
 @theme {
   --color-border: hsl(var(--border));
@@ -77,6 +78,7 @@
 
     --primary: 210 100% 50%;
     --primary-foreground: 210 40% 98%;
+    --font-vazir: 'vazir', Tahoma, Arial, sans-serif;
 
     --border: 214 32% 91%;
   }
@@ -95,22 +97,23 @@
 
   * {
     @apply border-border;
-    font-family: "yekan", sans-serif;
+    font-family: 'vazir', Tahoma, Arial, sans-serif !important; /* اینجا فونت وزیر اعمال شد */
   }
 
   html, body {
-  font-family: 'Yekan', Tahoma, Arial, sans-serif;
-  direction: rtl; /* اگر سایت فارسی است و راست به چپ */
+    font-family: 'vazir', Tahoma, Arial, sans-serif !important;
+    direction: rtl; /* اگر سایت فارسی است و راست به چپ */
 }
 
 
   html {
     @apply scroll-smooth;
+    font-family: 'vazir', Tahoma, Arial, sans-serif !important;
   }
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'vazir', Tahoma, Arial, sans-serif !important;
   }
 }
 
@@ -172,4 +175,6 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  font-family: 'vazir', Tahoma, Arial, sans-serif !important;
+
 }

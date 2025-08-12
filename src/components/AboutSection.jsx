@@ -10,21 +10,14 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              ماهان محمودی، برنامه‌نویس بک‌اند با تجربه در C# ,PHP, javascript
+              ماهان محمودی، برنامه‌نویس بک‌اند
             </h3>
             <p className="text-muted-foreground">
-              با تسلط بر SQL Server و MongoDB، راهکارهای پایگاه‌داده‌ای بهینه
-              طراحی می‌کنم. در زمینه توسعه APIهای RESTful مهارت دارم و اصول
-              SOLID و CQRS را برای بهبود نگهداری و توسعه سیستم‌ها رعایت می‌کنم.
-              همچنین، با ابزارهایی مانند Git، Docker و Redis کار کرده‌ام و در
-              WordPress نیز آشنایی کافی دارم. علاقه‌مند به کار تیمی و یادگیری
-              مداوم هستم و مشتاقم تا در یک تیم پویا به توسعه نرم‌افزارهای
-              قدرتمند کمک کنم.
+              مسلط به C#، PHP، JavaScript، SQL Server، MongoDB و توسعه APIهای
+              RESTful. آشنا با SOLID، CQRS، Git، Docker، React و WordPress.
+              علاقه‌مند به کار تیمی و یادگیری مداوم.
             </p>
-
-            <p className="text-muted-foreground">
-              آشنایی با مراحل دیپلوی و Ci/Cd توانایی انجام پروژه با ری اکت
-            </p>
+            <p className="font-vazir">آشنا با CI/CD و توسعه با React.</p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
